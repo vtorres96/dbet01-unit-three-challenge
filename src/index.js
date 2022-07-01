@@ -13,6 +13,4 @@ app.use('/login', authenticationRoutes);
 app.use('/categoria', categoriesRoutes);
 app.use('/transacao', transactionsRoutes);
 
-app.listen(3000, () => {
-    console.log('Server running on port http://localhost:3000');
-});
+app.listen(process.env.PORT);
