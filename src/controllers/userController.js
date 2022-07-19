@@ -8,10 +8,6 @@ const {
 const index = async (req, res) => {
     let { loggedUser } = req;
 
-    if (!loggedUser){
-        return res.status(401).json({ 'mensagem': 'Para acessar este recurso um token de autenticação válido deve ser enviado'});
-    }
-
     try {
         return res.status(200).json(loggedUser);
     } catch (error) {
@@ -62,10 +58,6 @@ const update = async (req, res) => {
 
     if (validators.length > 0) {
         return res.status(400).json(validators);
-    }
-
-    if (!loggedUser){
-        return res.status(401).json({ 'mensagem': 'Para acessar este recurso um token de autenticação válido deve ser enviado'});
     }
 
     try {
